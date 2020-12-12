@@ -10,6 +10,9 @@ def tri_mult(A: Mat, B: Mat):
                 res[i][j] += A[i][k]*B[k][j]
     return res
 
+
+#Решение
+
 def shift_spectrum(A: Mat, eps, steps=1e9):
     Ai = A
     Q = uni_mat(len(Ai))

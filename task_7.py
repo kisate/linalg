@@ -3,6 +3,9 @@ from util import Vec, Mat, uni_mat, uni_vec, empty_mat
 def calc_form(A: Mat, v: Vec):
     return (Mat([[x for x in v]])*(A*v))[0]
 
+
+#Решение
+
 def simple_iter(A: Mat, x_0: Vec, eps):
     steps = 100000
     x_i = x_0

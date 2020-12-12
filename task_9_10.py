@@ -5,6 +5,9 @@ from task_3_4 import giv_rotate
 def right_haus_rotate(A: Mat, v: Vec):
     return A - (Mat([[x] for x in A*v]))*(Mat([[x for x in v]]))*2
 
+
+#Решение 9
+
 def tridiag(A: Mat):
     n = len(A)
     A = A.copy_mat()
@@ -38,6 +41,8 @@ def tridiag_qr(A: Mat, extra=[]):
                 giv_rotate(x, i, i-1, c, s)
     
     return (Q.transpose(), A)
+
+#Решение 10
 
 def tridiag_spectrum(A: Mat, eps, steps=1e9):
     Ai = A

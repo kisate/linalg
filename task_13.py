@@ -43,6 +43,10 @@ def build_exp_second(n):
             G[y][x] += 1
     return G
 
+
+#n -- n из первой или p из второй. Для первой передавать build_exp_first, 
+# для второй -- build_exp_second
+
 def calc_alpha(n, graph_builder):
     G = graph_builder(n)
     d = (G*Vec([1]*len(G)))[0]

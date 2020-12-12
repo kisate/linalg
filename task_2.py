@@ -10,6 +10,8 @@ def gauss(A : Mat, b : Vec):
 
     return res
 
+#Решение
+
 def gauss_zeidel(A : Mat, b : Vec, eps):
     zeroes = True
     n = len(A)

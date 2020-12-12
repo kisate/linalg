@@ -3,6 +3,9 @@ from util import *
 def check_circle(circle):
     return abs(circle[0]) + abs(circle[1]) < 1
 
+
+#Решение
+
 def simple_it(A : Mat, b: Vec, eps):
     n = len(A)
     e_n = uni_mat(n)

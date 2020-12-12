@@ -3,6 +3,8 @@ from task_3_4 import giv_qr
 from task_5_6 import haus_qr
 
 
+#Решение
+
 def simple_spectrum(A: Mat, eps):
     Ai = A
     Q = uni_mat(len(Ai))
