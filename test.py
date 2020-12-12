@@ -74,3 +74,5 @@ G2 = [
     [1,0,0,1,0]
 ]
 
+v = Vec([1+1j, 2, 3j, -1j])
+print(simple_iter(Mat(A), v, 0.00001))

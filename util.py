@@ -3,7 +3,7 @@ from typing import List
 EPS = 0.0000000001
 
 class Vec:
-    def __init__(self, coords : List[int]):
+    def __init__(self, coords : List):
         self.coords = coords
     def __getitem__(self, i):
         return self.coords[i]
@@ -28,7 +28,7 @@ class Vec:
             res[i] = self[i] + b[i]
         return Vec(res)
     def __abs__(self):
-        return sum([x**2 for x in self])**0.5
+        return sum([abs(x)**2 for x in self])**0.5
     def __mul__(self, b):
         return Vec([x * b for x in self])
     def normed(self):
@@ -142,4 +142,4 @@ def empty_mat(n, m=None):
     return Mat(res)
 
 def vec_norm(vec):
-    return sum([x**2 for x in vec])**0.5
+    return sum([abs(x)**2 for x in vec])**0.5
