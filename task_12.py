@@ -12,9 +12,9 @@ def check_isometry(A: Mat, B: Mat):
     AT,_  = tridiag(A)
     BT,_  = tridiag(B)
 
-    sa, _ = shift_spectrum(AT, eps, steps)
-    sb, _ = shift_spectrum(BT, eps, steps)
-    if sa is None or sb is None:
+    sa, _, good1 = shift_spectrum(AT, eps, steps)
+    sb, _, good2 = shift_spectrum(BT, eps, steps)
+    if not (good1 and good2):
         return 1
     if abs(Vec(sa)-Vec(sb)) > eps:
         return 0

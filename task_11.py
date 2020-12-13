@@ -36,7 +36,8 @@ def shift_spectrum(A: Mat, eps, steps=1e9):
             it_steps -= 1
 
         if it_steps == 0:
-            return (None, None)
-
-    return ([Ai[i][i] for i in range(len(A))], Q)
+            return ([Ai[i][i] for i in range(len(A))], Q, False)
+        
+        
+    return ([Ai[i][i] for i in range(len(A))], Q, True)
     # return (Ai, Q)

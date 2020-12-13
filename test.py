@@ -8,7 +8,7 @@ from task_9_10 import tridiag, tridiag_qr, tridiag_spectrum
 from task_12 import check_isometry
 from task_11 import shift_spectrum
 from task_13 import build_exp_first, build_exp_second, calc_alpha
-from util import Mat, Vec, uni_mat, EPS
+from util import Mat, Vec, uni_mat, EPS, empty_mat
 import numpy as np
 A = [
     [1, 1, -3, 1],
@@ -74,5 +74,22 @@ G2 = [
     [1,0,0,1,0]
 ]
 
-v = Vec([1+1j, 2, 3j, -1j])
-print(simple_iter(Mat(A), v, 0.00001))
+TEST_N = 20
+
+TEST_MAT = empty_mat(TEST_N)
+import random
+for i in range(TEST_N):
+    for j in range(i, TEST_N):
+        x = random.randint(0, 10)
+        TEST_MAT[i][j] = x
+        TEST_MAT[j][i] = x
+print(TEST_MAT)
+TD, Q = tridiag(TEST_MAT)
+sp, Q, good = tridiag_spectrum(TD, 0.00001)
+v, w = np.linalg.eig(np.array(TEST_MAT))
+print(sorted(sp))
+print(sorted(v))
+print(good)
+
+# v = Vec([1+1j, 2, 3j, -1j])
+# print(simple_iter(Mat(A), v, 0.00001))

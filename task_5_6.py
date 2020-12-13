@@ -18,5 +18,6 @@ def haus_qr(A:Mat):
             continue
         A = haus_rotate(A, u.normed())
         Q = haus_rotate(Q, u.normed())
+
     return (Q.transpose(), A)
     
