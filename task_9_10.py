@@ -26,12 +26,15 @@ def tridiag(A: Mat):
     
     return (A, Q.transpose())
 
-def tridiag_qr(A: Mat, extra=[]):
+def tridiag_qr(A: Mat, extra=[], max_n=None):
     n = len(A)
     A = A.copy_mat()
     Q = uni_mat(n)
 
-    for i in range(1, n):
+    if (max_n == None):
+        max_n = n
+
+    for i in range(1, max_n):
         if abs(A[i][i-1]) > EPS:
             c = A[i-1][i-1] / (A[i-1][i-1]**2 + A[i][i-1]**2)**0.5
             s = -A[i][i-1] / (A[i-1][i-1]**2 + A[i][i-1]**2)**0.5

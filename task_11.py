@@ -30,8 +30,8 @@ def shift_spectrum(A: Mat, eps, steps=1e9):
             for j in range(i+1, n):
                 es[j][j] = 0
             Qt = Q.transpose()
-            Qi, R = tridiag_qr(Ai-es, [Qt])
-            Ai = R*Qi + es
+            Qi, R = tridiag_qr(Ai-es, [Qt], i+1)
+            Ai = tri_mult(R,Qi) + es
             Q = Qt.transpose()
             it_steps -= 1
 

@@ -85,10 +85,11 @@ for i in range(TEST_N):
         TEST_MAT[j][i] = x
 print(TEST_MAT)
 TD, Q = tridiag(TEST_MAT)
-sp, Q, good = tridiag_spectrum(TD, 0.00001)
+sp, Q, good = shift_spectrum(TD, 0.00001)
 v, w = np.linalg.eig(np.array(TEST_MAT))
 print(sorted(sp))
 print(sorted(v))
+print(abs(Vec(sorted(sp)) - Vec(sorted(v))))
 print(good)
 
 # v = Vec([1+1j, 2, 3j, -1j])
