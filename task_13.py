@@ -51,10 +51,10 @@ def calc_alpha(n, graph_builder):
     G = graph_builder(n)
     d = (G*Vec([1]*len(G)))[0]
     A, _ = tridiag(G)
-    sp, _, _ = shift_spectrum(A, 0.00001)
+    sp, _, good = shift_spectrum(A, 0.00001, 1e5)
 
     sp.sort(reverse=True)
 
     l = max(abs(sp[1]), abs(sp[-1]))
 
-    return l/d
+    return (l/d, good)

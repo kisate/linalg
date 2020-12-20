@@ -143,3 +143,13 @@ def empty_mat(n, m=None):
 
 def vec_norm(vec):
     return sum([abs(x)**2 for x in vec])**0.5
+
+def read_mat():
+    a = []
+    a.append([float(x) for x in input().split()])
+    for _ in range(1, len(a[0])):
+        a.append([float(x) for x in input().split()])
+    return Mat(a)
+
+def read_vec():
+    return Vec([complex(x) for x in input().split()])

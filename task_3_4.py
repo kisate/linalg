@@ -1,4 +1,4 @@
-from util import Vec, Mat, EPS, uni_mat
+from util import Vec, Mat, EPS, uni_mat, read_mat, read_vec
 
 def giv_rotate(A : Mat, i, j, c, s):
     if (abs(s**2 + c**2 - 1) > EPS):
@@ -32,7 +32,3 @@ def giv_qr(A : Mat):
             giv_rotate(Q, i, k, 0, 1)
     
     return (Q.transpose(), A)
-
-    
-
-    

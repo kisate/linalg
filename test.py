@@ -74,23 +74,49 @@ G2 = [
     [1,0,0,1,0]
 ]
 
-TEST_N = 20
+# TEST_N = 50
 
-TEST_MAT = empty_mat(TEST_N)
-import random
-for i in range(TEST_N):
-    for j in range(i, TEST_N):
-        x = random.randint(0, 10)
-        TEST_MAT[i][j] = x
-        TEST_MAT[j][i] = x
-print(TEST_MAT)
-TD, Q = tridiag(TEST_MAT)
-sp, Q, good = shift_spectrum(TD, 0.00001)
-v, w = np.linalg.eig(np.array(TEST_MAT))
-print(sorted(sp))
-print(sorted(v))
-print(abs(Vec(sorted(sp)) - Vec(sorted(v))))
-print(good)
+# TEST_MAT = empty_mat(TEST_N)
+# import random
+# for i in range(TEST_N):
+#     for j in range(i, TEST_N):
+#         x = random.randint(0, 10)
+#         TEST_MAT[i][j] = x
+#         TEST_MAT[j][i] = x
+# v, w = np.linalg.eig(np.array(TEST_MAT))
+# print(TEST_MAT)
+# TD, Q = tridiag(TEST_MAT)
+# sp, Q, good = shift_spectrum(TD, 0.00001)
+
+# print(sorted(sp))
+# print(sorted(v))
+# print(abs(Vec(sorted(sp)) - Vec(sorted(v))))
+# print(good)
+
+# MAT_2 = [
+#     [0,1,1,0,0,0],
+#     [1,0,0,1,0,0],
+#     [1,0,0,0,1,0],
+#     [0,1,0,0,0,1],
+#     [0,0,1,0,1,0],
+#     [0,0,0,1,0,0]
+# ]
+
+# TD, Q = tridiag(Mat(MAT_2))
+# print(TD)
+# sp, Q, good = shift_spectrum(TD, 0.00001)
+# v, w = np.linalg.eig(np.array(MAT_2))
+
+# print(good)
+# print(sorted(sp))
+# print(sorted(v))
+
 
 # v = Vec([1+1j, 2, 3j, -1j])
 # print(simple_iter(Mat(A), v, 0.00001))
+
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+
+for i in primes:
+    print(i)
+    print(calc_alpha(i, build_exp_second))

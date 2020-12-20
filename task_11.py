@@ -34,7 +34,7 @@ def shift_spectrum(A: Mat, eps, steps=1e9):
             Ai = tri_mult(R,Qi) + es
             Q = Qt.transpose()
             it_steps -= 1
-
+        
         if it_steps == 0:
             return ([Ai[i][i] for i in range(len(A))], Q, False)
         
